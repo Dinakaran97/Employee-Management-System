@@ -1,0 +1,203 @@
+<!-- Top navigation -->
+
+
+<!-- Sidebar navigation -->
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active">
+              <i class=" fas fa-solid fa-plus"></i>Add Employee
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/emplist" routerLinkActive="active" >
+              <i class=" fas fa-solid fa-list"></i>Employee list
+            </a>
+          </li>
+         
+       
+         
+        </ul>
+      </div>
+    </nav>
+    <!-- Main content -->
+    <main role="mains" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="inner-adjust">
+        <div class="pt-3 pb-2 mb-3 ">
+          <h1 class="h2"></h1>
+        </div>
+        <!-- Show user data when logged in -->
+        <div class="row">
+          <div class="col-md-12">
+          
+            <div class="container1">
+              <div class="pt-3 pb-2 mb-3 border-bottom">
+                <h2 class="h2">Employee Details</h2>
+              </div>
+              
+              <form   (ngSubmit)="!employeelist.invalid && saveEmployee()" #employee="ngForm"style="background-image: url('assets/blackbac.jpg'); background-size: cover; color: whitesmoke;  ">
+                <div class="row" >
+                  <div class="col-lg-5 col-md-12 col-sm-12">
+                    <div class="row">
+                     <div class="col-md-12 mb-3">
+                      <div class="alert alert-warning" *ngIf="employee.dirty && employeelist.invalid">Enter valid values</div>
+                      <fieldset class="form-group">
+                        <label>Employee Name</label>
+                        <input
+                          type="text"
+                          
+                          class="form-control"
+                          
+                          [(ngModel)]="employeelist.employeeName"
+                          name="employeename"
+                          required
+                        />
+                      </fieldset>
+                        
+                       
+              
+                    </div>
+                       <div class="col-md-12 mb-3">
+                        <label>Employee Age</label>
+                        <input
+                          type="number"
+                          [(ngModel)]="employeelist.employeeAge"
+                          name="employeeAge"
+                          class="form-control"
+                          required
+                        />
+                       
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label>Employee Date of Birth</label>
+                        <input
+                          type="date"
+                          [ngModel]="employeelist.employeeDateofbirth | date:'yyyy-MM-dd'"
+                          (ngModelChange)= "employeelist.employeeDateofbirth=$event"
+                          name="employeeDateofbirth"
+                          class="form-control"
+                          required
+                        />
+                       
+                    </div>
+              
+              
+                    <div class="col-md-12 mb-3">
+                        <label>Employee Desgination</label>
+                        <input
+                          type="text"
+                                                    class="form-control"
+                                                    [(ngModel)]="employeelist.employeeDesgination"
+                                                    name="employeeDesgination"
+                          required
+                        />
+                       
+                    </div>
+
+                    <div class="col-md-12 mb-3">
+                      <label>Employee Joining Date</label>
+                      <input
+                        type="date"
+                      
+                        
+                        [ngModel]="employeelist.employeeJoiningdate | date:'yyyy-MM-dd'"
+                          (ngModelChange)= "employeelist.employeeJoiningdate=$event"
+                          class="form-control"
+                        name="employeeJoiningdate"
+                        required
+                      />
+                     
+                  </div>
+                  <div class="col-md-12 mb-3">
+                      <label>Employee Salary</label>
+                      <input
+                        type="number"
+                        [(ngModel)]="employeelist.employeeSalary"
+                        name="employeeSalary"
+                        class="form-control"
+                        required
+                      />
+                     
+                  </div>
+                  <div class="col-md-12 mb-3">
+                      <label>Employee Mobile number</label>
+                      <input
+                        type="number"
+                        [(ngModel)]="employeelist.employeePhoneno"
+                        name="employeePhoneno"
+                        class="form-control"
+                        required
+                        maxlength=10
+                      />
+                     
+                  </div>
+                  <div class="col-md-12 mb-3">
+                      <label>Employee Mail Id</label>
+                      <input
+                        type="text"
+                        [(ngModel)]="employeelist.employeeMailid"
+                        name="employeeMailid"
+                        class="form-control"
+                        required
+                      />
+                     
+                  </div>
+                  <div class="col-md-12 mb-3">
+                      <label>Employee Location</label>
+                      <input
+                        type="text"
+                        [(ngModel)]="employeelist.employeeLocation"
+                        name="employeeLocation"
+                        class="form-control"
+                        required
+                      />
+                     
+                  </div>
+              
+              
+                    
+              
+                  
+                   
+              
+                    </div>
+              
+                    <div class="form-group text-center">
+                      <button
+                        type="button"
+                        class="btn btn-secondary gap-right"
+                        
+                      >
+                        Reset
+                      </button>
+                      <button
+                        type="submit"
+                        class="btn btn-success"
+                        
+                      >
+                        Add 
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+                
+              
+              </div>
+              
+              <div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    
+    </main>
+   
+  </div>
+ 
+</div>

@@ -1,0 +1,71 @@
+<!-- <p>list-to-dos works!</p> -->
+<div>
+   <!--<input type="text" [(ngModel)]="filterTerm" placeholder="search by common name" class="form-control">
+    <div *ngFor = "
+    let employees of employee
+    | filter:filterTerm" >--> 
+     
+    </div>
+<div class="container">
+    <table class="table table-bordered table-striped table-hover">
+        <!-- <caption>todo List</caption> -->
+        <thead>
+            <tr>
+                <th>Employee Id</th>
+                <th>Employee Name</th>
+                <th>Employee Age</th>
+                <th>Employee DOB</th>
+                <th>Employee Desgination</th>
+                <th>Employee Joining Date</th>
+                <th>Employee Salary</th>
+                <th>Employee Mobile No</th>
+                <th>Employee Mail Id</th>
+                <th>Employee Location<th>
+                    
+            </tr>    
+        </thead>
+        <tbody>
+
+           <!-- <tr
+            *ngFor="
+              let employees of employee
+                | paginate: { itemsPerPage: 8, currentPage: p }| filter:filterTerm;
+              let i = index
+            "
+          >-->
+
+            <tr *ngFor="let employees of employee">
+                <td>{{employees.employeeId}}</td>
+                <td>{{employees.employeeName}}</td>
+                <td>{{employees.employeeAge}}</td>
+                <td>{{employees.employeeDateofbirth}}</td>
+                <td>{{employees.employeeDesgination}}</td>
+                <td>{{employees.employeeJoiningdate}}</td>
+                <td>{{employees.employeeSalary}}</td>
+                <td>{{employees.employeePhoneno}}</td>
+                <td>{{employees. employeeMailid}}</td>
+                <td>{{employees.employeeLocation}}</td>
+                <!--<td><button (click)="updateEmployee(employees.employeeId)"class="btn btn-success">Update</button></td>
+                <td><button (click)="employeeDelete(employees.employeeId)" class="btn btn-warning">Delete</button></td>-->
+                <td class="text-center action-block">
+                    <span
+                      class="mr-2 btn btn-outline-primary btn-sm"
+                      routerLink="/empadd/{{employees.employeeId}}"
+                      ><i class="fas fa-thin fa-pen"></i></span >
+                    <span
+                      class="btn btn-outline-danger btn-sm"
+                      (click)="employeeDelete(employees.employeeId)"
+                      ><i class="fas fa-trash"></i></span
+                    >
+                  </td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        
+            <button (click)="createEmployee()" class="btn btn-success">Add</button>
+        
+    </div>
+   <!--<pagination-controls (pageChange)="p = $event"></pagination-controls>--> 
+    </div>
+    
